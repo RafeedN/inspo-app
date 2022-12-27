@@ -1,38 +1,128 @@
-.App {
-  text-align: center;
+:root{
+    --gradient-text: linear-gradient(89.97deg, #AE67FA 1.84%, #F49867 102.67%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#root, html, body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    font-family: Basecoat Light;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.title{
+    margin-bottom: 10rem;
+    font-size: 40px;
+}
+.app{
+    height: 100%;
+
+    /* ff 3.6+ */
+    background:-moz-radial-gradient(circle at 50% 87%, #1A0182 0%, #000C32 68%);
+
+    /* safari 5.1+,chrome 10+ */
+    background:-webkit-radial-gradient(circle at 50% 87%, #1A0182 0%, #000C32 68%);
+
+    /* opera 11.10+ */
+    background:-o-radial-gradient(circle at 50% 87%, #1A0182 0%, #000C32 68%);
+
+    /* ie 10+ */
+    background:-ms-radial-gradient(circle at 50% 87%, #1A0182 0%, #000C32 68%);
+
+    /* global 92%+ browsers support */
+    background:radial-gradient(circle at 50% 87%, #1A0182 0%, #000C32 68%);
+
+    display: flex;
+    flex-direction: column;
+    background-position: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+    background-color: azure;
+    font-family: Basecoat Light;
+    padding: 3%;
+    background-color: #03002e;
+    border-radius: 5px;
+    color: white;
+    font-style: normal;
 }
 
-.App-link {
-  color: #61dafb;
+
+.btn {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin: 30px;
+    font-family: Basecoat Light;
+    font-size: 17px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn:active {
+    color: #03002e
+}
+
+.btn:active:after {
+    background: transparent;
+}
+
+.btn:hover:before {
+    opacity: 1;
+}
+
+.btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #03002e;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
 }
