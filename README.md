@@ -4,7 +4,7 @@ This is a web application built using the **React framework**. Its main function
 
 The application provides an **interactive** and **engaging** user experience, with a **simple** and **intuitive** interface. Upon loading the page or clicking a button, a new random quote is fetched and displayed dynamically, providing users with a new quote each time.
 
-## Project Learning Goals
+## Project Learning Goals Achieved
 1. React Fundamentals
 2. API Integration
 3. Data Manipulation
