@@ -11,15 +11,10 @@ class App extends React.Component {
     }
     
     fetchInspo = () => {
-        axios.get('https://type.fit/api/quotes')
-            .then((response) => {
-                const len = response.data.length;
-                const {text} = response.data[Math.floor(Math.random() * len)]
-                console.log(text)
-                this.setState({inspo: text})
-
-                
-            })
+        axios.get("https://zenquotes.io/api/random")
+          .then(res => {
+            this.setState({ inspo: res.data[0].q });
+          })
             .catch((error) => {
                 console.log(error)
             })
