@@ -11,9 +11,9 @@ class App extends React.Component {
     }
     
     fetchInspo = () => {
-        axios.get("https://api.quotable.io/random")
+        axios.get("https://favqs.com/api/qotd")
           .then(res => {
-            this.setState({ inspo: res.data.content });
+            this.setState({ inspo: res.data.quote.body });
           })
             .catch((error) => {
                 console.log(error)
