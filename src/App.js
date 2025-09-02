@@ -11,9 +11,9 @@ class App extends React.Component {
     }
     
     fetchInspo = () => {
-        axios.get("https://zenquotes.io/api/random")
+        axios.get("https://api.quotable.io/random")
           .then(res => {
-            this.setState({ inspo: res.data[0].q });
+            this.setState({ inspo: res.data.content });
           })
             .catch((error) => {
                 console.log(error)
@@ -24,7 +24,7 @@ class App extends React.Component {
     const {inspo} = this.state
     return (
         <div className='app'>
-            <h1 className='title'>Inspo Genterator</h1>
+            <h1 className='title'>Inspo Generator</h1>
             <div className='box'>
                 <h1 className='.gradient_text'>{inspo}</h1>
             </div> 
