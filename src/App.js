@@ -11,9 +11,9 @@ class App extends React.Component {
     }
     
     fetchInspo = () => {
-        axios.get("https://favqs.com/api/qotd")
+        axios.get("https://programming-quotes-api.vercel.app/api/random")
           .then(res => {
-            this.setState({ inspo: res.data.quote.body });
+            this.setState({ inspo: res.data.en });
           })
             .catch((error) => {
                 console.log(error)
