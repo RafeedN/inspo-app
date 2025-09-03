@@ -11,4 +11,3 @@ The application provides an **interactive** and **engaging** user experience, wi
 4. User Interface Design
 5. Deployment and Version Control
 
-https://insperation-genterator.netlify.app
